@@ -1,0 +1,36 @@
+[gd_scene load_steps=9 format=3 uid="uid://ctm8cjch4g7qv"]
+
+[ext_resource type="Script" path="res://Escenas/main.gd" id="1_1uv5b"]
+[ext_resource type="PackedScene" uid="uid://bc4rp5nom5rjw" path="res://Escenas/background.tscn" id="1_5j6dv"]
+[ext_resource type="PackedScene" uid="uid://c3amatpn333b2" path="res://Escenas/character_body_2d.tscn" id="2_yg4aj"]
+[ext_resource type="PackedScene" uid="uid://be1h3ppgdo42x" path="res://Escenas/static_body_2d.tscn" id="3_wkqc6"]
+[ext_resource type="PackedScene" uid="uid://bmt7jhg6y4obl" path="res://Escenas/canvas_layer.tscn" id="5_dm2i1"]
+[ext_resource type="PackedScene" uid="uid://bivenewcfp45m" path="res://Escenas/game_over.tscn" id="6_a1w38"]
+[ext_resource type="AudioStream" uid="uid://bwxob1280xwv3" path="res://Assets/Sonidos/Music.mp3" id="7_77wrv"]
+[ext_resource type="AudioStream" uid="uid://bybgg3qjkcwem" path="res://Assets/Sonidos/DeathSound.mp3" id="8_hmhyb"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_1uv5b")
+
+[node name="Background" parent="." instance=ExtResource("1_5j6dv")]
+
+[node name="Piso" parent="." instance=ExtResource("3_wkqc6")]
+z_index = 1
+
+[node name="Moto" parent="." instance=ExtResource("2_yg4aj")]
+position = Vector2(151, 507)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Hud" parent="." instance=ExtResource("5_dm2i1")]
+
+[node name="GameOver" parent="." instance=ExtResource("6_a1w38")]
+process_mode = 2
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_77wrv")
+volume_db = -10.0
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_hmhyb")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bivenewcfp45m"]
+
+[ext_resource type="FontFile" uid="uid://dr5lsuxtj2e5u" path="res://Assets/Fuentes/Play Pretend.otf" id="1_kym3l"]
+
+[node name="GameOver" type="CanvasLayer"]
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -15.5
+offset_right = 38.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_kym3l")
+theme_override_font_sizes/font_size = 40
+text = "Reiniciar"

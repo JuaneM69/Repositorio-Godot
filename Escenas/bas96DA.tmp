@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvdomir0lhcto"]
+
+[ext_resource type="Texture2D" uid="uid://duh53yvp80goe" path="res://Assets/img/Obstaculos/barrel.png" id="1_u05lh"]
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("1_u05lh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(5, 5)
+polygon = PackedVector2Array(5.2, -13, -1.2, -13, -13.6, 3.4, -13.5, 13, 13.5, 13, 13.6, 1.8)

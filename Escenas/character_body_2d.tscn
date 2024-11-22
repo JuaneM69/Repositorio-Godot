@@ -1,0 +1,132 @@
+[gd_scene load_steps=18 format=3 uid="uid://c3amatpn333b2"]
+
+[ext_resource type="Texture2D" uid="uid://boqem4lnvvr4w" path="res://Assets/img/Sprite1.png" id="1_peyy5"]
+[ext_resource type="Script" path="res://Escenas/Moto.gd" id="1_wnyft"]
+[ext_resource type="Texture2D" uid="uid://32t1aw424t0x" path="res://Assets/img/Sprite2.png" id="2_m26ko"]
+[ext_resource type="Texture2D" uid="uid://cngpsf1obtxou" path="res://Assets/img/Sprite3.png" id="3_cjscr"]
+[ext_resource type="Texture2D" uid="uid://drdbvjstj2qbk" path="res://Assets/img/Salto1.png" id="5_q3k6h"]
+[ext_resource type="Texture2D" uid="uid://cjmuga5l4hj7j" path="res://Assets/img/Salto2.png" id="6_3ja1l"]
+[ext_resource type="AudioStream" uid="uid://c37wx41ml6ath" path="res://Assets/Sonidos/8Bit Jump Sound Effect.wav" id="7_6isy7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ijfnl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_peyy5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_m26ko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cjscr")
+}],
+"loop": false,
+"name": &"Moto1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_m26ko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q3k6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3ja1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q3k6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_m26ko")
+}],
+"loop": false,
+"name": &"Salto",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyyk3"]
+size = Vector2(64, 168)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2hvkm"]
+radius = 31.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6h4k1"]
+radius = 27.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckpcu"]
+size = Vector2(112, 88)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pf42d"]
+radius = 30.1496
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_syd7i"]
+radius = 25.0799
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qdxwf"]
+size = Vector2(131.253, 80.289)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a03iu"]
+radius = 23.2461
+height = 53.9206
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2sft"]
+size = Vector2(38.1447, 52.7796)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 1
+script = ExtResource("1_wnyft")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_ijfnl")
+animation = &"Moto1"
+autoplay = "Moto1"
+
+[node name="ColisionQuieto" type="CollisionShape2D" parent="."]
+position = Vector2(-26, -4)
+shape = SubResource("RectangleShape2D_hyyk3")
+
+[node name="ColisionQuieto1" type="CollisionShape2D" parent="."]
+position = Vector2(80, 55)
+shape = SubResource("CircleShape2D_2hvkm")
+
+[node name="ColisionQuieto2" type="CollisionShape2D" parent="."]
+position = Vector2(-86, 60)
+shape = SubResource("CircleShape2D_6h4k1")
+
+[node name="ColisionQuieto3" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 36)
+shape = SubResource("RectangleShape2D_ckpcu")
+
+[node name="ColisionSalto" type="CollisionShape2D" parent="."]
+position = Vector2(76, -15)
+shape = SubResource("CircleShape2D_pf42d")
+debug_color = Color(0.820459, 0.106547, 0.428904, 0.42)
+
+[node name="ColisionSalto1" type="CollisionShape2D" parent="."]
+position = Vector2(-63, 67)
+shape = SubResource("CircleShape2D_syd7i")
+debug_color = Color(0.820459, 0.106547, 0.428904, 0.42)
+
+[node name="ColisionSalto2" type="CollisionShape2D" parent="."]
+position = Vector2(-14.5085, 14.1524)
+rotation = -0.598648
+shape = SubResource("RectangleShape2D_qdxwf")
+debug_color = Color(0.820459, 0.106547, 0.428904, 0.42)
+
+[node name="ColisionSalto3" type="CollisionShape2D" parent="."]
+position = Vector2(-77, -59)
+rotation = -0.47822
+shape = SubResource("CapsuleShape2D_a03iu")
+debug_color = Color(0.820459, 0.106547, 0.428904, 0.42)
+
+[node name="ColisionSalto4" type="CollisionShape2D" parent="."]
+position = Vector2(-59.8265, -15.8118)
+rotation = -0.397935
+shape = SubResource("RectangleShape2D_d2sft")
+debug_color = Color(0.820459, 0.106547, 0.428904, 0.42)
+
+[node name="8BitJumpSoundEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_6isy7")

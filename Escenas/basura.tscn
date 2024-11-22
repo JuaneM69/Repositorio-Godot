@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://2nvdchsyefda"]
+
+[ext_resource type="Texture2D" uid="uid://duh53yvp80goe" path="res://Assets/img/Obstaculos/basura.png" id="1_ietdi"]
+
+[node name="Area2D" type="Area2D"]
+z_index = 1
+scale = Vector2(4, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_ietdi")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-0.535717, 2.38419e-07)
+scale = Vector2(0.357143, 0.336538)
+polygon = PackedVector2Array(31, 39, 40, 27, 40, 6, 22, -24, 22, -39, -7, -39, -7, -24, -19, -18, -37, 9, -37, 39)

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc4rp5nom5rjw"]
+
+[ext_resource type="Texture2D" uid="uid://bgu3wdysbtgsr" path="res://Assets/img/bg/2-Cielo.png" id="1_70q2v"]
+[ext_resource type="Texture2D" uid="uid://dfr41e4nkdkar" path="res://Assets/img/bg/2-Nubes.png" id="2_0eyx0"]
+[ext_resource type="Texture2D" uid="uid://b5njpvluavdeg" path="res://Assets/img/bg/2-Ciudad.png" id="3_u7sko"]
+
+[node name="Background" type="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_70q2v")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+texture = ExtResource("2_0eyx0")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+texture = ExtResource("3_u7sko")
+centered = false
+offset = Vector2(0, -70)

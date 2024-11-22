@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3amatpn333b2"]
+
+[ext_resource type="Script" path="res://Escenas/character_body_2d.gd" id="1_75v1b"]
+[ext_resource type="Texture2D" uid="uid://boqem4lnvvr4w" path="res://Assets/img/Sprite1.png" id="1_peyy5"]
+[ext_resource type="Texture2D" uid="uid://32t1aw424t0x" path="res://Assets/img/Sprite2.png" id="2_m26ko"]
+[ext_resource type="Texture2D" uid="uid://cngpsf1obtxou" path="res://Assets/img/Sprite3.png" id="3_cjscr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ijfnl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_peyy5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_m26ko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cjscr")
+}],
+"loop": true,
+"name": &"Moto1",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrkwc"]
+size = Vector2(236, 180)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 1
+script = ExtResource("1_75v1b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_ijfnl")
+animation = &"Moto1"
+autoplay = "Moto1"
+frame_progress = 0.874186
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_jrkwc")

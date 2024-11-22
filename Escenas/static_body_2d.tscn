@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://be1h3ppgdo42x"]
+
+[ext_resource type="Texture2D" uid="uid://de58rhcuiqg5q" path="res://Assets/img/bg/Carretera.png" id="1_ygbms"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jf3fi"]
+size = Vector2(2304, 54)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ygbms")
+centered = false
+offset = Vector2(0, 552)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1152, 621)
+shape = SubResource("RectangleShape2D_jf3fi")

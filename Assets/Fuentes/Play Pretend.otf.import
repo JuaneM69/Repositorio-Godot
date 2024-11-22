@@ -1,0 +1,34 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://dr5lsuxtj2e5u"
+path="res://.godot/imported/Play Pretend.otf-3425dff57efc50c3c6c6af8ef3d7e601.fontdata"
+
+[deps]
+
+source_file="res://Assets/Fuentes/Play Pretend.otf"
+dest_files=["res://.godot/imported/Play Pretend.otf-3425dff57efc50c3c6c6af8ef3d7e601.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

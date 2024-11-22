@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwhdtenu2sx68"]
+
+[ext_resource type="Script" path="res://Escenas/transmilenio.gd" id="1_d5qdi"]
+[ext_resource type="Texture2D" uid="uid://dh51xbedmne5k" path="res://Assets/img/Transmi2.png" id="1_kff5y"]
+[ext_resource type="Texture2D" uid="uid://jmyhmat0sana" path="res://Assets/img/Transmi.png" id="2_3bvhe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y1gpo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kff5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_kff5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3bvhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3bvhe")
+}],
+"loop": true,
+"name": &"Transmi",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_luv41"]
+size = Vector2(94, 4.85714)
+
+[node name="Transmilenio" type="Area2D"]
+script = ExtResource("1_d5qdi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_y1gpo")
+animation = &"Transmi"
+autoplay = "Transmi"
+frame_progress = 0.261324
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, -88)
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_luv41")
+disabled = true
